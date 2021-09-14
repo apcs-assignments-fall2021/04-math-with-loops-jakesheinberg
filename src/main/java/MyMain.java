@@ -23,18 +23,15 @@ public class MyMain {
 
     // Calculates the square root iteratively, using the Babylonian method
     public static double babylonian(double x) {
-        Scanner scan = new Scanner(System.in);
-        double n = scan.nextDouble();
-        double guess = n / 2;
-        double prevguess = guess;
-        while (Math.abs(prevguess-guess)>.01)
+        double n = 5;
+        double m = (n+x/n)/2;
+        while (Math.abs(m-n)>.000001)
         {
-            double m = n / guess;
-            guess = (guess + m) / 2;
-            prevguess = guess;
+            n=m;
+            m=(m+x/m)/2;
 
         }
-        return guess;
+        return m;
     }
     
     
